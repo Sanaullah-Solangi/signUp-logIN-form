@@ -62,6 +62,12 @@ function signUp() {
     inputs.forEach((val) => {
       val.value = "";
     });
+    //! SHOWING ALERT FOR SUCCESSFULLY SIGNING UP
+    Swal.fire({
+      title: "Thank You!",
+      text: "You have Signed Up!",
+      icon: "success",
+    });
   }
   //! IF ANY INUT IS EMPTY WARNING WILL BE GIVEN TO THE USER
   else {
