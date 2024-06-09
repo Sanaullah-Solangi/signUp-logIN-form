@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp & logIn</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <!--!=============== signUp section starts ===============-->
+      <div class="signUpContainer">
+        <!--todo=== headianag ===-->
+        <h1 class="heading txt-center">Sign Up</h1>
+        <!--todo=== userName ===-->
+        <label for="signingUserName">user Name</label>
+        <input
+          class="btn"
+          type="text"
+          name="signingUserName"
+          id="signingUserName"
+          placeholder="Enter your name"
+        />
+        <!--todo=== email ===-->
+        <label for="signingEmail">email</label>
+        <input
+          class="btn txt-none"
+          type="text"
+          name="signingEmail"
+          id="signingEmail"
+          placeholder="Enter Your Email"
+        />
+        <!--todo=== new password ===-->
+        <label for="newPassword">new Password</label>
+        <input
+          class="btn txt-none"
+          type="text"
+          name="newPassword"
+          id="newPassword"
+          placeholder="Enter New Password"
+        />
+        <!--todo=== confirm password ===-->
+        <label for="confirmPassword">confirm Password</label>
+        <input
+          class="btn txt-none"
+          type="text"
+          name="confirmPassword"
+          id="confirmPassword"
+          placeholder="Enter Confirm Password"
+        />
+        <!--todo=== address ===-->
+        <label for="signingAddress">address</label>
+        <input
+          class="btn"
+          type="text"
+          name="signingAddress"
+          id="signingAddress"
+          placeholder="Enter your address"
+        />
+        <!--todo=== sign Btn ===-->
+        <button
+          onclick="signUp()"
+          class="signUpBtn btn pointer d-flex jc-center al-center"
+        >
+          sign Up
+        </button>
+      </div>
+      <!--!=============== signUp section starts ===============-->
+      <div class="logInContainer d-none">
+        <!--todo=== headianag ===-->
+        <h1 class="heading txt-center">log In</h1>
+        <!--todo=== userName ===-->
+        <label for="logInUserName">user Name</label>
+        <input
+          required
+          class="btn"
+          type="text"
+          name="logInUserName"
+          id="logInUserName"
+          placeholder="Enter your name"
+        />
+        <!--todo=== email ===-->
+        <label for="logInEmail">email</label>
+        <input
+          required
+          class="btn txt-none"
+          type="text"
+          name="logInEmail"
+          id="logInEmail"
+          placeholder="Enter Your Email"
+        />
+        <!--todo===  password ===-->
+        <label for="logInPassword"> Password</label>
+        <input
+          class="btn txt-none"
+          type="password"
+          name="logInPassword"
+          id="logInPassword"
+          placeholder="Enter your Password"
+        />
+
+        <!--todo=== logIn Btn ===-->
+        <button class="logInBtn btn pointer d-flex jc-center al-center">
+          log in
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

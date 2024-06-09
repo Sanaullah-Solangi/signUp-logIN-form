@@ -1,0 +1,267 @@
+/*!========== common use css ==========*/
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "jost";
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main-container,
+.header {
+  max-width: 1440px;
+}
+
+.main-container {
+  margin-top: 7rem;
+}
+
+.section {
+  padding: 2rem 5rem;
+}
+
+/*!========== website theme ==========*/
+
+:root {
+  --mainColor1: rgb(55, 32, 81);
+  --mainColor2: rgb(210, 149, 232);
+  --mainColor3: rgb(68, 46, 107);
+  --bg-gradient: linear-gradient(130deg, var(--mainColor1), var(--mainColor2));
+  --bg-gradient2: linear-gradient(to bottom, rgb(86, 63, 114), rgb(45, 23, 71));
+  --btn-bg: rgb(207, 159, 241);
+  --black: #000;
+  --white: #fff;
+}
+
+/*!========== ReuseAble Code ==========*/
+
+/*todo===== all flex properties =====*/
+
+.d-flex {
+  display: flex;
+}
+
+/*?=== justify content properties ===*/
+
+.jc-center {
+  justify-content: center;
+}
+.jc-start {
+  justify-content: start;
+}
+.jc-end {
+  justify-content: end;
+}
+.jc-between {
+  justify-content: space-between;
+}
+.jc-evenly {
+  justify-content: space-evenly;
+}
+.jc-around {
+  justify-content: space-around;
+}
+
+/*?=== aling items properties ===*/
+
+.al-center {
+  align-items: center;
+}
+.al-start {
+  align-items: start;
+}
+.al-end {
+  align-items: end;
+}
+
+/*?=== flex directions properties ===*/
+
+.dir-col {
+  flex-direction: column;
+}
+.dir-col-reverse {
+  flex-direction: column-reverse;
+}
+
+/*todo===== all grid properties =====*/
+
+.grid {
+  display: grid;
+}
+
+/*?=== template columns properties ===*/
+.grid-one-col {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-three-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*?=== justify items properties ===*/
+
+.ji-center {
+  justify-items: center;
+}
+.ji-start {
+  justify-items: start;
+}
+.ji-end {
+  justify-items: end;
+}
+
+/*todo===== all txt properties =====*/
+
+.txt-up {
+  text-transform: uppercase;
+}
+.txt-low {
+  text-transform: lowercase;
+}
+.txt-cap {
+  text-transform: capitalize;
+}
+.txt-none {
+  text-transform: none;
+}
+.txt-center {
+  text-align: center;
+}
+.bold {
+  font-weight: bold;
+}
+
+/*todo===== all position properties =====*/
+
+.p-relative {
+  position: relative;
+}
+.p-absolute {
+  content: "";
+  position: absolute;
+}
+.p-fixed {
+  content: "";
+  position: fixed;
+}
+
+/*todo===== all other properties =====*/
+
+.d-none {
+  display: none;
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+.m-auto {
+  margin: auto;
+}
+.pointer {
+  cursor: pointer;
+}
+.border-none {
+  border: none;
+}
+.radius-50per {
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+}
+.transition-3ms {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.btn {
+  border: none;
+  outline: none;
+}
+.mainContainer {
+  background: var(--bg-gradient);
+  height: 100%;
+  padding: 20px 0 40px;
+}
+.signUpContainer,
+.logInContainer,
+input {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.signUpContainer,
+.logInContainer {
+  width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 50px 20px;
+  color: white;
+  background-color: var(--mainColor3);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.heading {
+  font-size: 3rem;
+}
+.grid {
+  gap: 1rem;
+}
+label,
+input {
+  margin-top: 10px;
+}
+label {
+  display: block;
+  font-size: 1.8rem;
+}
+input {
+  width: 100%;
+  padding: 10px 10px;
+  font-size: 1.6rem;
+  color: white;
+  background: var(--bg-gradient2);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.598);
+}
+
+.signUpBtn,
+.logInBtn {
+  background-color: var(--btn-bg);
+  color: var(--mainColor3);
+  width: 100%;
+  padding: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-top: 40px;
+}
