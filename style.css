@@ -162,6 +162,9 @@ html {
 .d-none {
   display: none;
 }
+.d-block {
+  display: block;
+}
 .w-100 {
   width: 100%;
 }
@@ -195,13 +198,59 @@ html {
   border: none;
   outline: none;
 }
+
+/*!=============== navbar section starts ===============*/
+.navbar {
+  background-color: var(--mainColor3);
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  color: var(--white);
+  font-size: 2.5rem;
+}
+
+.formBtns > button,
+.logInBtn,
+.signUpBtn {
+  background-color: var(--btn-bg);
+  color: var(--mainColor3);
+  border: 1px solid transparent;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+}
+.formBtns > button:hover,
+.logInBtn:hover,
+.signUpBtn:hover {
+  background-color: var(--mainColor3);
+  color: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
+}
+.formBtns > button {
+  font-size: 2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+/*!=============== mainContainer section starts ===============*/
 .mainContainer {
   background: var(--bg-gradient);
-  height: 100%;
-  padding: 20px 0 40px;
+  padding: 0px 0 40px;
 }
+.vh {
+  height: 100vh;
+}
+.per {
+  height: 100%;
+}
+
 .signUpContainer,
 .logInContainer,
+.displayContainer,
 input {
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -211,17 +260,14 @@ input {
 }
 
 .signUpContainer,
-.logInContainer {
+.logInContainer,
+.displayContainer {
   width: 500px;
   margin: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   padding: 50px 20px;
   color: white;
   background-color: var(--mainColor3);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
 
 .heading {
@@ -252,8 +298,6 @@ input::placeholder {
 
 .signUpBtn,
 .logInBtn {
-  background-color: var(--btn-bg);
-  color: var(--mainColor3);
   width: 100%;
   padding: 10px;
   font-size: 1.8rem;

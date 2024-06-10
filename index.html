@@ -7,9 +7,25 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="mainContainer">
+    <div class="mainContainer vh">
+      <!--!=============== navbar section starts ===============-->
+      <nav class="navbar d-flex jc-between">
+        <!-- LOGO -->
+        <a class="logo">sign Up</a>
+
+        <!-- FORM BTNS -->
+        <div class="formBtns">
+          <button class="btn signUp pointer" onclick="showSignUpForm()">
+            sign Up
+          </button>
+          <button class="btn logIn pointer" onclick="showLogInForm()">
+            LogIn
+          </button>
+        </div>
+      </nav>
+      <!--!=============== navbar section ends ===============-->
       <!--!=============== signUp section starts ===============-->
-      <div class="signUpContainer">
+      <div class="signUpContainer d-none">
         <!--todo=== headianag ===-->
         <h1 class="heading txt-center">Sign Up</h1>
         <!--todo=== userName ===-->
@@ -33,6 +49,8 @@
         <!--todo=== new password ===-->
         <label for="newPassword">new Password</label>
         <input
+          onblur="validateLengthOfPassword()"
+          oninput="checkPasswordStatus()"
           class="btn txt-none"
           type="text"
           name="newPassword"
@@ -65,7 +83,7 @@
           sign Up
         </button>
       </div>
-      <!--!=============== signUp section starts ===============-->
+      <!--!=============== LogIN section starts ===============-->
       <div class="logInContainer d-none">
         <!--todo=== headianag ===-->
         <h1 class="heading txt-center">log In</h1>
@@ -100,9 +118,54 @@
         />
 
         <!--todo=== logIn Btn ===-->
-        <button class="logInBtn btn pointer d-flex jc-center al-center">
+        <button
+          class="logInBtn btn pointer d-flex jc-center al-center"
+          onclick="logIn()"
+        >
           log in
         </button>
+      </div>
+      <!--!=============== DISPLAY USER DATA  ===============-->
+      <div class="displayContainer d-none">
+        <!--todo=== headianag ===-->
+        <h1 class="heading txt-center">User Details</h1>
+        <!--todo=== userName ===-->
+        <label for="displayUserName">user Name</label>
+        <input
+          readonly
+          class="btn"
+          type="text"
+          name="displayUserName"
+          id="displayUserName"
+        />
+        <!--todo=== email ===-->
+        <label for="displayEmail">email</label>
+        <input
+          readonly
+          class="btn txt-none"
+          type="text"
+          name="displayEmail"
+          id="displayEmail"
+        />
+        <!--todo=== new password ===-->
+        <label for="displayPassword">display Password</label>
+        <input
+          readonly
+          class="btn txt-none"
+          type="text"
+          name="displayPassword"
+          id="displayPassword"
+        />
+
+        <!--todo=== address ===-->
+        <label for="displayAddress">address</label>
+        <input
+          readonly
+          class="btn"
+          type="text"
+          name="displayAddress"
+          id="displayAddress"
+        />
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
