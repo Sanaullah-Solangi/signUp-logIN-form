@@ -190,7 +190,6 @@ function showLogInForm() {
 function logIn() {
   //* LOG IN ELEMENTS
   var inputs = logInContainer.querySelectorAll("input");
-  var logInUserName = logInContainer.querySelector("#logInUserName").value;
   var logInEmail = logInContainer.querySelector("#logInEmail").value;
   var logInPassword = logInContainer.querySelector("#logInPassword").value;
   // var logInAddress = logInContainer.querySelector("#logInAddress").value;
