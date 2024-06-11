@@ -269,7 +269,20 @@ input {
   color: white;
   background-color: var(--mainColor3);
 }
+.welcomeContainer {
+  color: white;
+  gap: 2rem;
+}
+.welcomeHeading {
+  font-size: 4rem;
+}
 
+.welcomeContainer > p {
+  font-size: 3rem;
+}
+.welcomeContainer > .intro {
+  font-size: 4rem;
+}
 .heading {
   font-size: 3rem;
 }

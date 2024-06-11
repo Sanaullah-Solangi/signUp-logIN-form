@@ -1,5 +1,6 @@
 //! GETTING ELEMENTS
 var mainContainer = document.querySelector(".mainContainer");
+var welcomeContainer = document.querySelector(".welcomeContainer");
 //  SIGNUP ELEMENTS
 var signUpContainer = document.querySelector(".signUpContainer");
 var signUpBtn = signUpContainer.querySelector(".signUpBtn");
@@ -157,6 +158,7 @@ function hideSignUpForm() {
   setTimeout(() => {
     showSignUpForm();
     signUpContainer.classList.add("d-none");
+    welcomeContainer.classList.replace("d-none", "d-flex");
   }, 2000);
 }
 //! DISPLAYING SIGNUP FORM IF IT IS HIDEN & HIDING IF IT IS DISPLAYED
@@ -165,6 +167,7 @@ function showSignUpForm() {
     signUpContainer.classList.replace("d-none", "d-block");
     logInContainer.classList.replace("d-block", "d-none");
     mainContainer.classList.replace("vh", "per");
+    welcomeContainer.classList.add("d-none");
   } else {
     signUpContainer.classList.replace("d-block", "d-none");
     mainContainer.classList.replace("per", "vh");
@@ -177,6 +180,7 @@ function showLogInForm() {
     logInContainer.classList.replace("d-none", "d-block");
     signUpContainer.classList.replace("d-block", "d-none");
     displayContainer.classList.replace("d-block", "d-none");
+    welcomeContainer.classList.add("d-none");
     mainContainer.classList.replace("per", "vh");
   } else {
     logInContainer.classList.replace("d-block", "d-none");
