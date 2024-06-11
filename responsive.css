@@ -16,19 +16,24 @@
 }
 
 @media (width <= 565px) {
-    .welcomeContainer {
-      gap: 0.5rem;
-      padding: 0 10px;
-    }
-    .welcomeHeading {
-      font-size: 3rem;
-    }
-  
-    .welcomeContainer > p {
-      font-size: 1.6rem;
-    }
-    .welcomeContainer > .intro {
-      font-size: 3rem;
-    }
+  .signUpContainer,
+  .logInContainer,
+  .displayContainer {
+    width: 90%;
   }
-  
+
+  .welcomeContainer {
+    gap: 0.5rem;
+    padding: 0 10px;
+  }
+  .welcomeHeading {
+    font-size: 3rem;
+  }
+
+  .welcomeContainer > p {
+    font-size: 1.6rem;
+  }
+  .welcomeContainer > .intro {
+    font-size: 3rem;
+  }
+}
