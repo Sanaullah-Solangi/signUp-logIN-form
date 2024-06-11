@@ -15,7 +15,6 @@ var displayEmail = displayContainer.querySelector("#displayEmail");
 var displayPassword = displayContainer.querySelector("#displayPassword");
 var displayAddress = displayContainer.querySelector("#displayAddress");
 // OTHERS
-var singUpDataCollection = []; // COLLECTION OF USER DATA'S OBJECTS / ARRAY OF OBJECTS
 var runCodoe = true; // FLAG TO CHECK EMPTY INPUT
 //!PROGRAME TO CHECK PASSWORD STATUS IN SIGNUP FORM
 var capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -71,7 +70,7 @@ function signUp() {
   var newPassword = signUpContainer.querySelector("#newPassword");
   var confirmPassword = signUpContainer.querySelector("#confirmPassword");
   var signingAddress = signUpContainer.querySelector("#signingAddress");
-  //* CHECKING IS THERE ANY EMPTY INPUT & UPDATING THE 'runCode' ACCORDING TO THE RESULT
+  //* ENSURES NO INPUT FIELD IS EMPTY BEFORE PROCEEDING.
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].value == "") {
       runCodoe = false;
@@ -79,10 +78,12 @@ function signUp() {
   }
   //* IF NO INPUT IS EMPTY CODE WILL BE EXECUTED
   if (runCodoe) {
-    //* MAKING SURE SAME EMAIL WILL NOT BE ACCEPTED
-    for (var i = 0; i < singUpDataCollection.length; i++) {
-      for (var key in singUpDataCollection[i]) {
-        if (singUpDataCollection[i][key] == signingEmail.value) {
+    var signUpDataCollection =
+      JSON.parse(localStorage.getItem("dataCollection")) ?? []; // COLLECTION OF USER DATA'S OBJECTS / ARRAY OF OBJECTS
+    //* ENSURES THE SAME EMAIL CANNOT BE USED MORE THAN ONCE.
+    for (var i = 0; i < signUpDataCollection.length; i++) {
+      for (var key in signUpDataCollection[i]) {
+        if (signUpDataCollection[i][key] == signingEmail.value) {
           Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -92,7 +93,7 @@ function signUp() {
         }
       }
     }
-    //* MAKING SURE NEW PASSWORD & CONFIRM PASSWORD BOTH ARE SMAE
+    //* ENSURES THE NEW PASSWORD AND CONFIRM PASSWORD FEILDS MATCHS.
     if (newPassword.value != confirmPassword.value) {
       Swal.fire({
         icon: "error",
@@ -101,6 +102,7 @@ function signUp() {
       });
       return false;
     }
+
     //* COLLECTING DATA IN THE OBJECT
     var signUpData = {
       userName: signingUserName.value,
@@ -110,7 +112,12 @@ function signUp() {
       userSigningAddress: signingAddress.value,
     };
     //* SENDING THE OBJECT TO THE ARRYA
-    singUpDataCollection.push(signUpData);
+    signUpDataCollection.push(signUpData);
+    localStorage.setItem(
+      "dataCollection",
+      JSON.stringify(signUpDataCollection)
+    );
+    console.log(localStorage.getItem("dataCollection"));
     //* EMPTY ALL INPUTS
     inputs.forEach((val) => {
       val.value = "";
@@ -183,7 +190,7 @@ function logIn() {
   var logInEmail = logInContainer.querySelector("#logInEmail").value;
   var logInPassword = logInContainer.querySelector("#logInPassword").value;
   // var logInAddress = logInContainer.querySelector("#logInAddress").value;
-  //* CHECKING IS THERE ANY EMPTY INPUT & UPDATING THE 'runCode' ACCORDING TO THE RESULT
+  //* ENSURES NO INPUT FIELD IS EMPTY BEFORE PROCEEDING.
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].value == "") {
       runCodoe = false;
@@ -191,16 +198,19 @@ function logIn() {
   }
   //* IF NO INPUT IS EMPTY CODE WILL BE EXECUTED
   if (runCodoe) {
+    var signUpDataCollection =
+      JSON.parse(localStorage.getItem("dataCollection")) ?? []; // COLLECTION OF USER DATA'S OBJECTS / ARRAY OF OBJECTS
     var emailFlag = false;
     var passwordFlag = false;
-    for (var i = 0; i < singUpDataCollection.length; i++) {
-      if (singUpDataCollection[i].email == logInEmail) {
+
+    for (var i = 0; i < signUpDataCollection.length; i++) {
+      if (signUpDataCollection[i].email == logInEmail) {
         emailFlag = true;
-        if (singUpDataCollection[i].userConfirmPassword == logInPassword) {
-          displayUserName.value = singUpDataCollection[i].userName;
-          displayEmail.value = singUpDataCollection[i].email;
-          displayPassword.value = singUpDataCollection[i].userConfirmPassword;
-          displayAddress.value = singUpDataCollection[i].userSigningAddress;
+        if (signUpDataCollection[i].userConfirmPassword == logInPassword) {
+          displayUserName.value = signUpDataCollection[i].userName;
+          displayEmail.value = signUpDataCollection[i].email;
+          displayPassword.value = signUpDataCollection[i].userConfirmPassword;
+          displayAddress.value = signUpDataCollection[i].userSigningAddress;
           passwordFlag = true;
           break;
         }
@@ -231,7 +241,7 @@ function logIn() {
     inputs.forEach((val) => {
       val.value = "";
     });
-    console.log(singUpDataCollection);
+    console.log(signUpDataCollection);
   } //* IF ANY INUT IS EMPTY WARNING WILL BE GIVEN TO THE USER
   else {
     Swal.fire({
